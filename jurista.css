@@ -2,36 +2,96 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 1rem;
+}
+nav a {
+    color: #f0c808;
+    text-decoration: double;
+    font-weight: bold;
+    font: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3 ease;
+    margin: 0 15px;
+    background-color: #406a41;
+}
+nav a:hover {
+    background-color: #1f795b;
+    color: #acbcec;
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background-color: #278d84;
-    color: #331a1a;
+    background: linear-gradient(135deg, #0b3d57, #1f795b);
+    color: #2c3e50;
+    background-color: #2c3e50;
 }
-header {
+body.tudomány {
+    background-color: #d8cca9af;
+}
+body.sport {
+    background-color: #6b9bb2;
+}
+body.fesztivál {
+    background-color: #bda684;
+}
+button, nav a {
     background-color: #406a41;
     color: white;
+    padding: 0.8rem 1.5rem;
+    border: #278d84;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: linear-gradieng(135deg, #0b3d57, #1f795b);
+    color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5em;
 }
 header h1{
-    font-size: 2.5rem;
+    font-size: 2.2em;
+    color: #278d84;
+    font-weight: bold;
 }
 header p {
     font-size: 1.2rem;
+    color: #ffffff;
 }
 section {
-    padding: 2rem;
-    margin: 1rem 0;
+    padding: 1.5em;
+    margin: 2em auto;
+    background-color: #1e3d59;
+    box-shadow: 0 4px 8px rgba(0, 0, 50, 0.1);
+    color: #ffffff;
+    max-width: 900px;
+    border-radius: 10px;
 }
-button {
-    background-color: #406a41;
-    color: white;
+h2 {
+    font: 1.8rem;
+    color: #278d84;
+}
+section h2 {  
+    font-size: 2rem;
+    color: #3a5f8c;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px #0b3d57;
+}
+button .btn {
+    background-color: #f0c808;
+    color: #278d84;
     border: none;
-    padding: 0.8rem 0.8rem;
-    font-size: 1.2rem;
-    cursor: pointer;
+    padding: 0.8rem, 1.5rem;
+    font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3 ease;
@@ -41,8 +101,9 @@ button a {
     color: white;
     text-decoration: double;
 }
-button:hover {
-    background-color: #406a41;
+button:hover, .btn:hover {
+    background-color: #1f795b;
+    color: #acbcec;
 }
 .featured {
     width: auto;
@@ -64,19 +125,24 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    flex-wrap: wrap;
 }
 .galléria-felület img {
-    width: 400px;
     height: 450px;
+    width: 250px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 25, 0.2);
     margin: 0.5rem;
     display: block;
+    transition: transform 0.3s ease;
 }
 #benefits ul {
     list-style-type: disc;
     margin-left: 2rem;
+    color: #fff;
 }
 form {
     display: flex;
@@ -89,14 +155,28 @@ input, textarea, button {
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
+    color: #fff;
+    cursor: pointer;
+}
+input, textarea {
+    background-color: #ffffff;
 }
 footer {
-    background-color: #278d84;
+    background-color: #2c3e50;
     color: white;
     text-align: center;
     padding: 1rem;
 }
 footer a {
-    color: #406a41;
+    color: #278d84;
     text-decoration: none;
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0.5rem;
+    galléria-felület {
+        grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    }
+    }
 }
